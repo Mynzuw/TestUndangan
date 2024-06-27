@@ -182,7 +182,8 @@ export const util = (() => {
         button.disabled = true;
         confetti({
             origin: { y: 1 },
-            zIndex: 1057
+            zIndex: 1057,
+            colors: ['#808080']
         });
 
         document.querySelector('body').style.overflowY = 'scroll';
