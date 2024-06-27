@@ -181,9 +181,10 @@ export const util = (() => {
     const open = async (button) => {
         button.disabled = true;
         confetti({
-            origin: { y: 1 },
-            zIndex: 1057,
-            colors: ['#808080']
+             particleCount: 200,
+            spread: 160,
+            origin: { y: 0.6 },
+            colors: ['#808080'] // Gray color
         });
 
         document.querySelector('body').style.overflowY = 'scroll';
