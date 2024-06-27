@@ -192,7 +192,12 @@ export const util = (() => {
             document.getElementById('information').remove();
         }
 
-        
+        const token = document.querySelector('body').getAttribute('data-key');
+        if (!token || token.length === 0) {
+            document.getElementById('ucapan').remove();
+            document.querySelector('a.nav-link[href="#ucapan"]').closest('li.nav-item').remove();
+        }
+
         AOS.init();
 
         countDownDate();
@@ -203,7 +208,16 @@ export const util = (() => {
 
         theme.check();
         theme.showButtonChangeTheme();
-        
+
+        if (!token || token.length === 0) {
+            return;
+        }
+
+        const status = await storeConfig(token);
+        if (status === 200) {
+            animation();
+            await comment.comment();
+        }
     };
 
     const close = () => {
