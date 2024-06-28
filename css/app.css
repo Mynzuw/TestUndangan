@@ -54,6 +54,7 @@ body {
     background-image: url('https://i.ibb.co.com/px1G9rh/background.jpg');
     background-size: cover;
     background-position: center;
+    filter: blur(8px);
     opacity: 0.5;
 }
 
